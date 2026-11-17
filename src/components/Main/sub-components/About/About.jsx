@@ -42,10 +42,13 @@ export default function About({ isDarkMode }) {
           {"<About Me />"}
         </h2>
         <p>
-          I'm a passionate software developer focused on building clean,
-          functional applications. My journey into coding started with curiosity
-          and has grown into a commitment to crafting quality software that
-          solves real-world problems.
+          I'm a developer who believes there's always room to grow. I may not
+          know everything or be the best developer out there, but I'm always
+          willing to learn, improve, and try new things. I believe small,
+          consistent steps are better than trying to learn everything at once
+          and eventually losing momentum. For me, becoming a better developer
+          isn't about knowing it all, but about learning something new every day
+          and enjoying the journey along the way.
         </p>
         <p>
           I am currently a student at NAIT in Edmonton, Alberta, and a student

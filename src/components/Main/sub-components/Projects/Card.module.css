@@ -1,26 +1,121 @@
+.card-article {
+  height: 100%;
+  display: flex;
+}
+
+.project-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 12px;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
+.card-img-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 8.5;
+  background-color: #ffffff;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-in;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  image-rendering: -webkit-optimize-contrast;
+  transition: transform 0.35s ease;
+}
+
+.card-img-wrapper:hover .card-img {
+  transform: scale(1.03);
+}
+
+.zoom-badge {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(15, 23, 42, 0.75);
+  color: #ffffff;
+  font-size: 0.72rem;
+  padding: 2px 8px;
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.card-img-wrapper:hover .zoom-badge {
+  opacity: 1;
+}
+
+.card-body,
+:global(.card-body) {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.25rem;
+  gap: 0.75rem;
+  background-color: var(--card-bg-color);
+}
+
+.card-title {
+  margin-bottom: 0;
+  line-height: 1.35;
+}
+
+.card-descriptions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  flex: 1;
+}
+
+.card-text {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
 .note {
   background-color: var(--note-bg-color);
   border-left: 3px solid #f59e0b;
-  padding: 0.5rem;
+  padding: 0.6rem 0.75rem;
   border-radius: 4px;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   font-style: italic;
+  font-size: 0.875rem;
+  line-height: 1.45;
 }
 
 .tech-stack {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
+  align-content: flex-start;
+  gap: 0.45rem;
+  margin-bottom: 0.25rem;
 }
 
 .tech-tag {
-  padding: 0.25rem 0.75rem;
+  padding: 0.25rem 0.7rem;
   background: linear-gradient(135deg, #f0fdf4, #eff6ff);
   color: #1e293b;
   border: 1px solid #e2e8f0;
   border-radius: 20px;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 500;
   font-family: "Courier New", monospace;
   display: inline-block;
@@ -30,28 +125,50 @@
     background 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
 }
+
 .tech-tag:hover {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(2, 6, 23, 0.08);
   background: linear-gradient(90deg, #1e4a8a, #1ea6c8);
   color: white;
   cursor: pointer;
 }
-:global(.card-body) {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--card-bg-color);
-}
 
 .buttons-group {
   display: flex;
-  gap: 20px;
+  gap: 0.75rem;
   margin-top: auto;
+  padding-top: 0.25rem;
+  width: 100%;
 }
 
-.card-img {
-  max-height: 250px;
-  object-fit: cover;
+.button-link {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Move sections into aligned rows across cards on multi-column grids using subgrid */
+@supports (grid-template-rows: subgrid) {
+  @media (min-width: 769px) {
+    .card-subgrid {
+      display: grid;
+      grid-row: span 6;
+      grid-template-rows: subgrid;
+    }
+
+    .card-subgrid .project-card {
+      display: grid;
+      grid-row: span 6;
+      grid-template-rows: subgrid;
+    }
+
+    .card-subgrid .card-body {
+      display: grid;
+      grid-row: span 5;
+      grid-template-rows: subgrid;
+      gap: 0.85rem;
+    }
+  }
 }
 
 /*Hover effect for github btn*/
@@ -111,4 +228,21 @@
 .card-live-button:hover:after {
   opacity: 1;
   right: 25px;
+}
+
+@media (max-width: 576px) {
+  .card-body,
+  :global(.card-body) {
+    padding: 1rem;
+    gap: 0.65rem;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+  }
+
+  .buttons-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }

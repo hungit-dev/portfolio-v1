@@ -3,6 +3,51 @@ import styles from "./Projects.module.css";
 
 const projects = [
   {
+    image: "assets/images/feedy.png",
+    github_url: "https://github.com/Larold2464/One-Hit-Wonder-HACK-A-TON",
+    demo_url: "",
+    title: "Feedy (Classroom Engagement App)",
+    description:
+      "A real-time classroom platform where students join via QR codes to ask questions and report confusion levels, while instructors monitor live engagement.",
+    reason:
+      "Built for a team hackathon to bridge the gap between students and instructors. I architected the Django REST backend, built UI components, and integrated the APIs.",
+    note: "Note: Team Hackathon Project (Nait 2026) — Role: Backend Lead & UI Developer.",
+    techList: [
+      "Python",
+      "Django",
+      "Django REST Framework",
+      "SimpleJWT",
+      "SQLite",
+      "React",
+      "TanStack Query",
+      "Tailwind CSS",
+      "DaisyUI",
+      "Recharts",
+    ],
+  },
+  {
+    image: "assets/images/blog-api.png",
+    github_url: "https://github.com/hungit-dev/blog-api",
+    demo_url: "https://blog-api-psi-henna.vercel.app/",
+    title: "The Journal (Full-Stack Blog)",
+    description:
+      "A full-stack blogging platform with role-based access where authors manage and publish posts via a dashboard, and readers browse articles and leave comments.",
+    reason:
+      "Built to practice decoupled full-stack architecture with a RESTful API, JWT authentication, role-based authorization, and server-state management.",
+    note: "Note: Hosted on free-tier cloud services. Initial API requests may take 30-60 seconds if the server is waking up.",
+    techList: [
+      "React",
+      "TanStack Query",
+      "Tailwind CSS",
+      "DaisyUI",
+      "Node.js",
+      "Express.js",
+      "Passport.js (JWT)",
+      "Prisma",
+      "PostgreSQL",
+    ],
+  },
+  {
     image: "assets/images/file-uploader.png",
     github_url: "https://github.com/hungit-dev/file-uploader",
     demo_url: "https://file-uploader-pzv9.onrender.com/",
@@ -22,41 +67,13 @@ const projects = [
       "Bootstrap",
     ],
   },
-  {
-    image: "assets/images/battleship-game.png",
-    github_url: "https://github.com/hungit-dev/battleship",
-    demo_url: "https://hungitdev-battleship.netlify.app/",
-    title: "Battleship Game",
-    description:
-      "A fully functional Battleship game built using Test Driven Development (TDD). The game implements core game logic including ships, gameboards, players, turn-based attacks, and a computer opponent capable of making valid random moves.",
-    reason:
-      "Built to practice advanced JavaScript concepts, modular architecture, and TDD using Jest. Focused on separating application logic from DOM manipulation and writing unit tests for core game functionality.",
-    techList: [
-      "JavaScript",
-      "Jest",
-      "Babel",
-      "TDD",
-      "ES Modules",
-      "HTML",
-      "CSS",
-    ],
-  },
-  {
-    image: "assets/images/coming-soon.png",
-    github_url: "https://github.com/hungit-dev",
-    title: "More Projects Coming Soon",
-    description:
-      "I'm constantly building and learning. Check out my GitHub for additional projects and experiments.",
-    reason: "",
-    isComingSoonCard: true,
-  },
 ];
 export default function Projects() {
   return (
     <>
       <section
         id="projects"
-        className={`${styles["projects-section"]} container d-flex flex-column  gap-3 p-4`}
+        className={`${styles["projects-section"]} container d-flex flex-column gap-4 py-4 px-3 px-md-4`}
       >
         <h2 className={`${styles["projects-title"]} fs-2 fw-bold text-center`}>
           {"<Projects />"}
