@@ -70,31 +70,28 @@ const projects = [
 ];
 export default function Projects() {
   return (
-    <>
-      <section
-        id="projects"
-        className={`${styles["projects-section"]} container d-flex flex-column gap-4 py-4 px-3 px-md-4`}
-      >
-        <h2 className={`${styles["projects-title"]} fs-2 fw-bold text-center`}>
-          {"<Projects />"}
-        </h2>
-        <div className={styles["cards-grid"]}>
-          {projects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              image={project.image}
-              github_url={project.github_url}
-              demo_url={project.demo_url}
-              title={project.title}
-              description={project.description}
-              reason={project.reason}
-              note={project.note}
-              techList={project.techList}
-              isComingSoonCard={project.isComingSoonCard}
-            />
-          ))}
-        </div>
-      </section>
-    </>
+    <section
+      id="projects"
+      className={`${styles["projects-section"]} container d-flex flex-column gap-4 py-4 px-3 px-md-4`}
+    >
+      <h2 className={`${styles["projects-title"]} fs-2 fw-bold text-center`}>
+        {"<Projects />"}
+      </h2>
+      <div className={styles["cards-grid"]}>
+        {projects.map((project, index) => (
+          <ProjectCard
+            key={index}
+            image={project.image}
+            github_url={project.github_url}
+            demo_url={project.demo_url}
+            title={project.title}
+            description={project.description}
+            reason={project.reason}
+            note={project.note}
+            techList={project.techList}
+          />
+        ))}
+      </div>
+    </section>
   );
 }

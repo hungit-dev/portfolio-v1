@@ -53,12 +53,10 @@ export default function Header({ toggleTheme, isDarkMode }) {
     <header className="fixed-top">
       <Navbar
         expand="lg"
-        className={`${styles.navbar} ${isScrolled ? styles.glassy : ""} p-3 `}
+        className={`${isScrolled ? styles.glassy : ""} p-3`}
       >
         <Container>
-          <Navbar.Brand href="#home" className={styles.logo}>
-            {"<Henry Huynh />"}
-          </Navbar.Brand>
+          <Navbar.Brand href="#home">{"<Henry Huynh />"}</Navbar.Brand>
           <Navbar.Collapse id="basic-navbar-nav" className="mt-2 mt-lg-0">
             <Nav className="ms-auto gap-lg-2  ">
               <Nav.Link

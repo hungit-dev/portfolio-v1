@@ -19,20 +19,22 @@
   filter: invert(1) brightness(1.1);
 }
 
-:global(.navbar-nav) {
-  --bs-nav-link-hover-color: var(--primary-color);
-}
-
 /*Animation for nav links only*/
 a.nav-link-item {
   text-decoration: none;
   position: relative;
   overflow: hidden;
   color: var(--nav-text-color);
+  font-weight: 500;
+  transition:
+    color 0.25s ease,
+    text-shadow 0.25s ease;
 }
 
-a.nav-link-item:hover {
-  color: var(--nav-text-hover-color);
+a.nav-link-item:hover,
+a.nav-link-item:global(.active) {
+  color: var(--nav-text-hover-color) !important;
+  text-shadow: 0 0 10px rgba(55, 197, 240, 0.55);
 }
 
 a.nav-link-item::before,
@@ -41,7 +43,8 @@ a.nav-link-item::after {
   position: absolute;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #10b981, #3b82f6);
+  background: linear-gradient(90deg, #37c5f0, #60a5fa);
+  box-shadow: 0 0 8px rgba(55, 197, 240, 0.75);
   transition: all 0.5s;
 }
 
@@ -69,7 +72,13 @@ a.nav-link-item:hover::after {
 :global(.navbar-brand) {
   color: white;
   transition: color 0.3s ease;
-  font-weight: bold;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  font-variant-ligatures: none;
+  font-feature-settings:
+    "liga" 0,
+    "calt" 0;
+  letter-spacing: 0.03em;
 }
 
 :global(.navbar-brand):hover {
@@ -97,8 +106,16 @@ a.nav-link-item:hover::after {
   color: var(--glassy-text-color);
 }
 
-.glassy a.nav-link-item:hover {
-  color: var(--nav-text-hover-color);
+:global(:root[data-bs-theme="light"]) .glassy a.nav-link-item:hover,
+:global(:root[data-bs-theme="light"]) .glassy a.nav-link-item:global(.active) {
+  color: #265dad !important;
+  text-shadow: 0 0 8px rgba(55, 197, 240, 0.35);
+}
+
+:global(:root[data-bs-theme="dark"]) .glassy a.nav-link-item:hover,
+:global(:root[data-bs-theme="dark"]) .glassy a.nav-link-item:global(.active) {
+  color: #37c5f0 !important;
+  text-shadow: 0 0 10px rgba(55, 197, 240, 0.6);
 }
 
 .glassy .theme-toggler {

@@ -3,12 +3,10 @@ import About from "./sub-components/About/About";
 import Projects from "./sub-components/Projects/Projects";
 export default function Main({ isDarkMode }) {
   return (
-    <>
-      <main className="pb-5">
-        <Hero />
-        <About isDarkMode={isDarkMode} />
-        <Projects />
-      </main>
-    </>
+    <main className="pb-5">
+      <Hero />
+      <About isDarkMode={isDarkMode} />
+      <Projects />
+    </main>
   );
 }

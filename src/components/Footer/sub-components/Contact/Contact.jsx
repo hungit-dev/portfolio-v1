@@ -32,7 +32,7 @@ export default function Contact() {
         {/* LinkedIn */}
         <a
           aria-label="LinkedIn Profile"
-          href="https://www.linkedin.com/in/lamhuynh01/"
+          href="https://www.linkedin.com/in/henryhuynh01/"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -46,7 +46,12 @@ export default function Contact() {
           </svg>
         </a>
         {/* Email */}
-        <a href="mailto:lam.h.huynh01@gmail.com" aria-label="Send Email">
+        <a
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=lam.h.huynh01@gmail.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Send Email via Gmail"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="bi bi-envelope"
