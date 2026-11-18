@@ -54,7 +54,7 @@
   z-index: 1;
 }
 
-/* Brittany Chiang-style crisp architectural offset border frame (no blurry AI glow) */
+/* Profile frame  */
 .profile-frame::after {
   content: "";
   position: absolute;
