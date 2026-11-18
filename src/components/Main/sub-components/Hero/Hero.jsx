@@ -26,16 +26,14 @@ export default function Hero() {
     >
       <a
         className={styles["relative"]}
-        href="assets/files/henry_huynh_resume.pdf"
+        href="assets/files/henry-huynh-resume.pdf"
         target="_blank"
         rel="noopener noreferrer"
       >
         View Resume ↗
       </a>
       <h1 className="fs-1 fw-bold text-center">
-        <span
-          className={`${styles["gradient-text"]} ${styles["span-marker"]}`}
-        >
+        <span className={`${styles["gradient-text"]} ${styles["span-marker"]}`}>
           {">"}
         </span>
         Hi, I'm Henry Huynh
